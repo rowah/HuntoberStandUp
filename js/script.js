@@ -26,3 +26,37 @@ function fizzBuzz(num) {
 }
 fizzBuzz(10);
 fizzBuzz(15);
+
+//2.Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// domainName("http://github.com/carbonfive/raygun") == "github"
+// domainName("http://www.zombie-bites.com") == "zombie-bites"
+// domainName("https://www.cnet.com") == "cnet
+
+//takes in a string, can the string be empty? can the string have numbers only? I see a common pattern the .com after the domain name...is that gonna be common in all the string inputs?
+
+//prints the domain name only?
+
+// urlParser("http://github.com/carbonfive/raygun") == "github"
+// urlParser("http://www.zombie-bites.com") == "zombie-bites"
+// urlParser("https://www.cnet.com") == "cnet
+
+function urlParser(url) {
+  //replace "http://", "http://", and "www." with empty strings
+  //split the url at common patterns; "." and "//"
+  return url
+    .replace("http://", "")
+    .replace("https://", "")
+    .replace("www.", "")
+    .split(".")
+    .shift();
+}
+
+console.log(urlParser("http://github.com/carbonfive/raygun"));
+console.log(urlParser("http://www.zombie-bites.com"));
+console.log(urlParser("https://www.cnet.com"));
+console.log(
+  urlParser(
+    "https://www.codewars.com/kata/517abf86da9663f1d2000003/train/javascript"
+  )
+);
